@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/Cliente.css">
+  <link rel="stylesheet" href="../rolcliente/css/Cliente.css">
+  <link rel="stylesheet" href="../iconos/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../reservas/css/estilo_reserva.css">
+  <title>Reservas</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <!-- 1 fila: Barra de Navegacion -->
+    <div class="row bg-danger-subtle">
+      <div class="col">
+        <nav class="navbar navbar-expand-lg ">
+
+          <img class="navbar-brand" src="../rolcliente/img/Log_peluches.png">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav ">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../bienvenida.html"><i class="fa-solid fa-house"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../errores/500.html"><i class="fa-solid fa-bell"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../iniciovalido.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+    <!-- 2 fila: 1 columna: Menu de funcionalidades / 2 columna: Cargan los forms y contenidos -->
+    <div class="row">
+      <div class="col-md-3 bg-danger-subtle menu">
+
+        <!-- Rol -->
+
+        <div class="imgRol text-center mt-4 mb-3">
+          <img src="../rolcliente/img/usuario.png" alt="usuario">
+        </div>
+        <div class="infoRol text-center">
+          <h5>Fernando David Gonzales Pedro</h5>
+          <h6>Cliente</h6>
+        </div>
+        <div class="botonPerfil text-center">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Ver Perfil
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <div class="modal-body">
+                  <!-- contenido: card -->
+                  <div class="card">
+                    <img src="../rolcliente/img/usuario.png" alt="usuario">
+                    <div class="card-body">
+                      <h3 class="display-6">Fernando David Gonzales Pedro</h3>
+                      <h4>Rol Cliente</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Modificar Informacion</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Menu de funcionalidades -->
+
+        <h3>Servicios</h3>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../catalogo/catalogo.html">Catalogo</i></a></li>
+          <li class="nav-item"><a class="nav-link" href="../errores/500.html">Pedido</a></li>
+          <li class="nav-item"><a class="nav-link" href="../reservas/Reservas.html">Personalizacion</a></li>
+
+        </ul>
+        <h3>Pago</h3>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../rolcliente/Pago.html">Pago</a></li>
+
+        </ul>
+      </div>
+      <div class="container col-md-8">
+        <div class="card row justify-content-center form-container card border-primary justify-content-end">
+          <form action="" class="row needs-validation">
+
+            <div class="row">
+              <div class="col-md-9">
+                <label for="Nombres" class="form-label" required>Nombres</label>
+                <input type="text" class="form-control" placeholder="Ingrese Nombres" pattern="[A-Z, a-z]+" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="inputapellido" class="form-label" required>Apellidos</label>
+                <input type="text" class="form-control" placeholder="Ingrese Apellidos" pattern="[A-Z, a-z]+" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label" required>Tipo Identificacion</label>
+                <select class="form-select" required>
+                  <option selected required>Seleccione</option>
+                  <option value="cc">Cedula de Ciudadanía</option>
+                  <option value="ce">Cedula Extranjería</option>
+                  <option value="ti">Tarjeta Identidad</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Identificacion" class="form-label" required>Numero de Identificacion</label>
+                <input type="text" class="form-control" pattern="[0-9]{10}" required>
+                <!-- Este patrón permite entre 7 y 10 dígitos numéricos -->
+              </div>
+
+              <div class="col-md-6">
+                <label for="Peluches" class="form-label" required>Selecciona tu Peluche</label>
+                <select class="form-select" required>
+                  <option selected required>Seleccione</option>
+                  <option value="">Oso de Peluche</option>
+                  <option value="">Conejo</option>
+                  <option value="">Elefante</option>
+                  <option value="">Stich</option>
+                  <option value="">Cerdito</option>
+                  <option value="">Pinguino</option>
+                  <option value="">Pollito</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="inputnumid" class="form-label" required>Cantidad de Peluches</label>
+                <input type="text" class="form-control" pattern="[0-9]+" min="1" max="12" placeholder="Ingrese Cantidad"
+                  required>
+                <!-- Este patrón permite solo dígitos numéricos -->
+              </div>
+
+              <div class="col-md-6">
+                <label for="email" class="form-label" required>Email</label>
+                <input type="email" class="form-control" placeholder="Ingrese Correo" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="Direccion" class="form-label" required>Direccion</label>
+                <input type="text" class="form-control" placeholder="Ingrese Direccion" required>
+              </div>
+
+              <div class="col-md-12">
+                <label for="descripcion" class="form-label">Descripcion de lo que desea</label>
+                <textarea class="form-control" id="descripcion" rows="3"
+                  placeholder="Ingrese Descripcion detallada"></textarea>
+              </div>
+              <button type="submit" class="btn btn-outline-info mt-3 col-md-12">Crear</button>
+            </div>
+          </form>
+          <!-- Alerta de cambio exitoso -->
+          <div id="cambioExitosoAlert" class="alert alert-success mt-3" role="alert" style="display: none;">
+            Cambio exitoso
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- inicio footer -->
+  <footer>
+    <img id="logofooter" src="img/Log_peluches.png" alt="">
+    <div class="contengotodo">
+      <div class="img">
+        <h3>Contactanos</h3>
+      </div>
+      <div class="texto">
+        <p>Jhoan Camilo Aldana Ramirez</p>
+        <p>Nicol Dayana Guerra Diaz</p>
+        <p>Jostyn Jeanphool Salazar Rincón</p>
+        <p>Johan Andres Ayala Peñuela</p>
+      </div>
+    </div>
+    <div class="datos">
+      <div class="img">
+        <h2>Correos: </h2>
+      </div>
+      <div class="texto">
+        <p>Camilo@gmail.com</p>
+        <p>Nicol@gmail.com</p>
+        <p>Jostyn@gmail.com</p>
+        <p>Johan@gmail.com</p>
+      </div>
+    </div>
+
+  </footer>
+  <!-- fin footer -->
+
+
+  <br>
+
+  </d>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+  <!-- JavaScript para mostrar la alerta de cambio exitoso -->
+  <script>
+    // Selecciona el formulario por su ID
+    const formulario = document.querySelector('form');
+
+    // Agrega un evento 'submit' al formulario
+    formulario.addEventListener('submit', function (event) {
+      // Detiene el comportamiento predeterminado del formulario (envío)
+      event.preventDefault();
+
+      // Muestra la alerta de cambio exitoso
+      mostrarAlerta();
+    });
+
+    // Función para mostrar la alerta de cambio exitoso
+    function mostrarAlerta() {
+      // Selecciona el elemento de la alerta por su ID
+      const alerta = document.getElementById('cambioExitosoAlert');
+
+      // Muestra la alerta
+      alerta.style.display = 'block';
+
+      // Oculta la alerta después de 5 segundos (5000 milisegundos)
+      setTimeout(function () {
+        alerta.style.display = 'none';
+      }, 5000); // Cambia este valor si deseas que la alerta se oculte después de más o menos tiempo
+    }
+  </script>
+
+
+</body>
+
+</html>

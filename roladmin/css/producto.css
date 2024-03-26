@@ -1,0 +1,30 @@
+.row{
+    align-items: center;
+}
+
+
+footer{
+    background-color:#f88afc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-top:2px solid #fff;
+}
+
+.datos{
+    display: flex;
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    margin: 5px;
+    font-family: "Cinzel", serif;
+    font-size: 1vw;
+}
+#logofooter{
+    margin-right: 20px;
+    margin-top: 50px;
+    width: 200px;
+    height: 120px;
+}
