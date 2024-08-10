@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupones</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f4f4;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #d9534f;
+            margin: 20px 0;
+        }
+
+        .coupons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .coupon-wrapper {
+            margin: 0;
+            position: relative;
+            width: 220px;
+        }
+
+        .coupon {
+            border: 2px dashed #d9534f;
+            border-radius: 15px;
+            width: 100%;
+            height: 120px;
+            background-color: #ff7f7f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            position: relative;
+        }
+
+        .coupon-interno {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-family: 'Arial', sans-serif;
+            border: 1px solid #d9534f;
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .text {
+            color: #d9534f;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .number {
+            font-size: 20px;
+            writing-mode: vertical-lr;
+            width: 30px;
+            display: flex;
+            align-content: center;
+            align-items: center;
+        }
+
+        .number.left {
+            left: 10px;
+        }
+
+        .number.right {
+            right: 10px;
+        }
+
+        .divisor-left,
+        .divisor-right {
+            border: 1px solid #d9534f;
+            height: 100%;
+            width: 10px;
+        }
+
+        .divisor-left {
+            margin-right: 20px;
+        }
+
+        .divisor-right {
+            margin-left: 20px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .coupon-content {
+            display: none;
+        }
+
+        .state-1-1:checked ~ .coupon-wrapper-1 .state-1-content,
+        .state-2-1:checked ~ .coupon-wrapper-1 .state-2-content,
+        .state-1-2:checked ~ .coupon-wrapper-2 .state-1-content,
+        .state-2-2:checked ~ .coupon-wrapper-2 .state-2-content,
+        .state-1-3:checked ~ .coupon-wrapper-3 .state-1-content,
+        .state-1-4:checked ~ .coupon-wrapper-3 .state-1-content,
+        .state-2-3:checked ~ .coupon-wrapper-3 .state-2-content,
+        .state-2-4:checked ~ .coupon-wrapper-3 .state-2-content,
+        .state-1-4:checked ~ .coupon-wrapper-4 .state-1-content,
+        .state-2-4:checked ~ .coupon-wrapper-4 .state-2-content,
+        .state-1-5:checked ~ .coupon-wrapper-5 .state-1-content,
+        .state-2-5:checked ~ .coupon-wrapper-5 .state-2-content,
+        .state-1-6:checked ~ .coupon-wrapper-6 .state-1-content,
+        .state-2-6:checked ~ .coupon-wrapper-6 .state-2-content,
+        .state-1-7:checked ~ .coupon-wrapper-7 .state-1-content,
+        .state-2-7:checked ~ .coupon-wrapper-7 .state-2-content,
+        .state-1-8:checked ~ .coupon-wrapper-8 .state-1-content,
+        .state-2-8:checked ~ .coupon-wrapper-8 .state-2-content,
+        .state-1-9:checked ~ .coupon-wrapper-9 .state-1-content,
+        .state-2-9:checked ~ .coupon-wrapper-9 .state-2-content,
+        .state-1-10:checked ~ .coupon-wrapper-10 .state-1-content,
+        .state-2-10:checked ~ .coupon-wrapper-10 .state-2-content {
+            display: flex;
+        }
+
+        .reveal-button {
+            background-color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #d9534f;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-button:hover {
+            background-color: #f1c6c6;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Feliz aniversario</h1>
+
+    <div class="coupons-container">
+        <!-- Primer cupón -->
+        <input type="radio" name="state-1-1" id="state-1-1" class="state-1-1" checked>
+        <input type="radio" name="state-1-1" id="state-2-1" class="state-2-1">
+
+        <div class="coupon-wrapper coupon-wrapper-1">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-1" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">1234567</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">Cupón válido para construir una casa en minecraft 🏠</div>
+                    <div class="divisor-right"></div>
+                    <div class="number">1234567</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segundo cupón -->
+        <input type="radio" name="state-1-2" id="state-1-2" class="state-1-2" checked>
+        <input type="radio" name="state-1-2" id="state-2-2" class="state-2-2">
+
+        <div class="coupon-wrapper coupon-wrapper-2">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-2" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">7654321</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">Cupón válido para una película 🎬</div>
+
+                    <div class="divisor-right"></div>
+                    <div class="number">7654321</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercer cupón -->
+        <input type="radio" name="state-1-3" id="state-1-3" class="state-1-3" checked>
+        <input type="radio" name="state-1-3" id="state-2-3" class="state-2-3">
+
+        <div class="coupon-wrapper coupon-wrapper-3">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-3" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">9876543</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">Cupón válido para una sorpresa especial 🎁</div>
+
+                    <div class="divisor-right"></div>
+                    <div class="number">9876543</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarto cupón -->
+        <input type="radio" name="state-1-4" id="state-1-4" class="state-1-4" checked>
+        <input type="radio" name="state-1-4" id="state-2-4" class="state-2-4">
+
+        <div class="coupon-wrapper coupon-wrapper-4">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-4" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">2468135</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">Salida al parque a comer un helado 🍦 y disfrutar de un día especial juntos</div>
+                    <div class="divisor-right"></div>
+                    <div class="number">2468135</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quinto cupón -->
+        <input type="radio" name="state-1-5" id="state-1-5" class="state-1-5" checked>
+        <input type="radio" name="state-1-5" id="state-2-5" class="state-2-5">
+
+        <div class="coupon-wrapper coupon-wrapper-5">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-5" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">5432167</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">¡Cupón válido para una partida de Mario Kart! 🏎️</div>
+                    <div class="divisor-right"></div>
+                    <div class="number">5432167</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sexto cupón -->
+        <input type="radio" name="state-1-6" id="state-1-6" class="state-1-6" checked>
+        <input type="radio" name="state-1-6" id="state-2-6" class="state-2-6">
+
+        <div class="coupon-wrapper coupon-wrapper-6">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-6" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">1357924</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">¡Cupón válido para una tarde de juegos de terror en Roblox! 👻🎮</div>
+                    <div class="divisor-right"></div>
+                    <div class="number">1357924</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Séptimo cupón -->
+        <input type="radio" name="state-1-7" id="state-1-7" class="state-1-7" checked>
+        <input type="radio" name="state-1-7" id="state-2-7" class="state-2-7">
+
+        <div class="coupon-wrapper coupon-wrapper-7">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-7" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">2468101</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">¡Cupón válido para ir a vitriniar en el Dollar City y disfrutar de papas con gaseosa! 🛍️🍟🥤</div>
+                    <div class="divisor-right"></div>
+                    <div class="number">2468101</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Octavo cupón -->
+        <input type="radio" name="state-1-8" id="state-1-8" class="state-1-8" checked>
+        <input type="radio" name="state-1-8" id="state-2-8" class="state-2-8">
+
+        <div class="coupon-wrapper coupon-wrapper-8">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-8" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">1020304</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">¡Cupón válido para una sesión de salsa! Vamos a bailar y aprender juntos. 💃🕺🎶</div>
+
+                    <div class="divisor-right"></div>
+                    <div class="number">1020304</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Noveno cupón -->
+        <input type="radio" name="state-1-9" id="state-1-9" class="state-1-9" checked>
+        <input type="radio" name="state-1-9" id="state-2-9" class="state-2-9">
+
+        <div class="coupon-wrapper coupon-wrapper-9">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-9" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">5678901</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">¡Cupón válido para una divertida trivia de personajes de Disney! 🏰✨</div>
+                    <div class="divisor-right"></div>
+                    <div class="number">5678901</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Décimo cupón -->
+        <input type="radio" name="state-1-10" id="state-1-10" class="state-1-10" checked>
+        <input type="radio" name="state-1-10" id="state-2-10" class="state-2-10">
+
+        <div class="coupon-wrapper coupon-wrapper-10">
+            <div class="coupon coupon-content state-1-content">
+                <label for="state-2-10" class="reveal-button">Desvelar</label>
+                <div class="heart">❤️</div>
+            </div>
+            <div class="coupon coupon-content state-2-content">
+                <div class="coupon-interno">
+                    <div class="number">8901234</div>
+                    <div class="divisor-left"></div>
+                    <div class="text">¡Cupón válido para un día de karaoke! 🎤🎶 </div>
+                    <div class="divisor-right"></div>
+                    <div class="number">8901234</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
